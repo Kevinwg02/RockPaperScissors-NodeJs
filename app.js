@@ -29,6 +29,5 @@ function lunchingGame() {
             gameRules(player1, player2)
         });
     });
-
 }
 lunchingGame();
