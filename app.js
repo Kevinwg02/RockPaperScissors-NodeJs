@@ -6,8 +6,10 @@ function gameRules(player1, player2) {
         console.log("player 1 wins");
     } else if (player1 === "rock" && player2 === "rock" || player1 === "paper" && player2 === "paper" || player1 === "scissors" && player2 === "paper") {
         console.log("tied");
-    }  else {
+    }  else if (player2 === "rock" && player1 === "scissors" || player2 === "paper" && player1 === "rock" || player2 === "scissors" && player1 === "paper") {
         console.log("player 2 wins");
+    }else{
+        console.log("wrong input check your spelling")
     }
 }
 // lunching game by reading the input of player1
