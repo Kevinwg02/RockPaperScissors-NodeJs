@@ -53,7 +53,7 @@ function associateMove(numberp1, numberp2) {
 const prompt = require('password-prompt');
 
 async function lunchingGame() {
-    const numberp1 = await prompt('player 1: press 1 for rocks, 2 for paper, 3 for scissors: ', { method: 'hide' });
+    const numberp1 = await prompt('player 1: press 1 for paper, 2 for rock, 3 for scissors: ', { method: 'hide' });
     const numberp2 = await prompt('and now for player 2: ', { method: 'hide' });
     associateMove(parseInt(numberp1), parseInt(numberp2));
 }
