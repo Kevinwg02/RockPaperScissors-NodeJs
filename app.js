@@ -11,6 +11,23 @@ console.log("*******************************************************************
 console.log("********************************************************************************");
 console.log("********************************************************************************");
 console.log("********************************************************************************");
+
+
+function uselessStars() {
+    console.log("********************************************************************************");
+    console.log("********************************************************************************");
+    console.log("********************************************************************************");
+    console.log("********************************************************************************");
+    console.log("********************************************************************************");
+    console.log("********************************************************************************");
+}
+
+function uselessTimeStar() {
+    uselessStars();
+    console.log("********************************TIME To PLAY************************************");
+    uselessStars();
+}
+
 var player1;
 var player2;
 var numberp1;
@@ -23,13 +40,13 @@ var namep2;
 
 function gameRules(player1, player2) {
     if (player1 === "rock" && player2 === "scissors" || player1 === "paper" && player2 === "rock" || player1 === "scissors" && player2 === "paper") {
-uselessStars()
-        console.log("                          Congrats " + namep1 + "! you win                      ");
-uselessStars()
+        uselessStars();
+        console.log("                          Congrats " + namep1 + "! You win                      ");
+        uselessStars();
     } else if (player2 === "rock" && player1 === "scissors" || player2 === "paper" && player1 === "rock" || player2 === "scissors" && player1 === "paper") {
-uselessStars()
+        uselessStars()
         console.log("                        Congrats " + namep2 + "! You win                        ");
-uselessStars()
+        uselessStars();
     } else if (player1 === "rock" && player2 === "rock" || player1 === "paper" && player2 === "paper" || player1 === "scissors" && player2 === "paper") {
         console.log("tied");
     }
@@ -69,28 +86,22 @@ function associateMove(numberp1, numberp2) {
     gameRules(player1, player2)
 }
 
-function uselessStars(){
-    console.log("********************************************************************************");
-    console.log("********************************************************************************");
-    console.log("********************************************************************************");
-    console.log("********************************************************************************");
-    console.log("********************************************************************************");
-    console.log("********************************************************************************");
-}
-
-function uselessTimeStar() {
-    uselessStars();
-    console.log("********************************TIME To PLAY************************************");
-    uselessStars();
+const prompt = require('password-prompt');
+async function lunchingGame() {
+    const numberp1 = await prompt(namep1 + ': press 1 for paper, 2 for rocks, 3 for scissors: ', {
+        method: 'hide'
+    });
+    const numberp2 = await prompt(' and now for ' + namep2 + ': ', {
+        method: 'hide'
+    });
+    associateMove(parseInt(numberp1), parseInt(numberp2));
 }
 
 function getNames() {
-
     const readline = require("readline")
     const rl = readline.createInterface({
         input: process.stdin,
         output: process.stdout,
-
     });
 
     rl.question("player 1: write your name ", function saveInput(name1) {
@@ -104,15 +115,8 @@ function getNames() {
     });
 }
 
-const prompt = require('password-prompt');
-async function lunchingGame() {
-    const numberp1 = await prompt(namep1 + ': press 1 for paper, 2 for rocks, 3 for scissors: ', {
-        method: 'hide'
-    });
-    const numberp2 = await prompt(' and now for ' + namep2 + ': ', {
-        method: 'hide'
-    });
-    associateMove(parseInt(numberp1), parseInt(numberp2));
-}
-
 getNames();
+setTimeout(() => {
+    console.log("peace, I'm out");
+  }, "30000")
+  
