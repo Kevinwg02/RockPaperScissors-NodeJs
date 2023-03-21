@@ -7,13 +7,16 @@ You shouldn't need to install it since it's in the folder. Simply download the z
 
 ![hidingmove](https://user-images.githubusercontent.com/71637950/226200666-4eaa4a86-6c0f-4ec5-a65e-22a8fadbeb9e.png)
 
-There are two versions of this program: the very simple version called "v1" and a little more completed version called "app" that hides the moves from the players to prevent cheating and give the users a more typos proof interface. 
+There are a few different versions of this program: the very simple version called "v1" and "v2" and a little more completed version called "app" that gives the ability to write your names, hides the moves from the players to prevent cheating and give the users a more typos proof interface. 
 
 ![won](https://user-images.githubusercontent.com/71637950/226205293-8c364912-5b27-4263-9115-97fc4acf7e17.png)
 
 
 
+<h3>Complete version: </h3>
 
+![welcomeplayers](https://user-images.githubusercontent.com/71637950/226552636-75813a17-bc7e-41d0-9b3f-b3bb14816eab.png)
 
+![firstmove](https://user-images.githubusercontent.com/71637950/226552667-38353116-c9de-4faf-b352-1fd661c7e37c.png)
 
-
+![winner](https://user-images.githubusercontent.com/71637950/226552686-190d07e6-daac-4e15-a199-34b21e799fc3.png)
