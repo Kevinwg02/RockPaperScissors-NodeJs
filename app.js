@@ -36,19 +36,32 @@ var namep1;
 var namep2;
 var name1;
 var namep2;
+var staygo;
 
+function Timeout() {
+    setTimeout(() => {
+        console.log("peace, I'm out");
+    }, "2000")
+
+}
 
 function gameRules(player1, player2) {
     if (player1 === "rock" && player2 === "scissors" || player1 === "paper" && player2 === "rock" || player1 === "scissors" && player2 === "paper") {
         uselessStars();
         console.log("                          Congrats " + namep1 + "! You win                      ");
         uselessStars();
+        // Timeout();
+        playAgain()
     } else if (player2 === "rock" && player1 === "scissors" || player2 === "paper" && player1 === "rock" || player2 === "scissors" && player1 === "paper") {
         uselessStars()
         console.log("                        Congrats " + namep2 + "! You win                        ");
         uselessStars();
+        // Timeout();
+        playAgain()
     } else if (player1 === "rock" && player2 === "rock" || player1 === "paper" && player2 === "paper" || player1 === "scissors" && player2 === "paper") {
         console.log("tied");
+        // Timeout();
+        playAgain()
     }
 }
 
@@ -86,6 +99,7 @@ function associateMove(numberp1, numberp2) {
     gameRules(player1, player2)
 }
 
+
 const prompt = require('password-prompt');
 async function lunchingGame() {
     const numberp1 = await prompt(namep1 + ': press 1 for paper, 2 for rocks, 3 for scissors: ', {
@@ -115,8 +129,21 @@ function getNames() {
     });
 }
 
+
+function playAgain() {
+    const readline = require("readline")
+    const rl = readline.createInterface({
+        input: process.stdin,
+        output: process.stdout,
+    });
+
+    rl.question("Shall we play again ? Y - N ", function saveInput(staygo) {
+        rl.close();
+        if (staygo === "y") {
+            lunchingGame();
+        } else if (staygo === "n") {
+            console.log("bye")
+        }
+    });
+}
 getNames();
-setTimeout(() => {
-    console.log("peace, I'm out");
-  }, "30000")
-  
