@@ -11,7 +11,7 @@ Here you will found the game files with the ability to write your names, hides t
 Here is the welcome menu, where you can both type your names, then make you're moves:
 
 ![welcomeplayers](https://user-images.githubusercontent.com/71637950/226859117-70e63dd1-09c8-43a2-b1c4-2e2062f48b33.png)
-[firstmove](https://user-images.githubusercontent.com/71637950/226552667-38353116-c9de-4faf-b352-1fd661c7e37c.png)
+![firstmove](https://user-images.githubusercontent.com/71637950/226552667-38353116-c9de-4faf-b352-1fd661c7e37c.png)
 
 And here's the winner
 
