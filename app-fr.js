@@ -45,17 +45,17 @@ var namep2;
 
 
 function gameRules(player1, player2) {
-    if (player1 === "rock" && player2 === "scissors" || player1 === "paper" && player2 === "rock" || player1 === "scissors" && player2 === "paper") {
+    if (player1 === "pierre" && player2 === "ciseaux" || player1 === "feuille" && player2 === "pierre" || player1 === "ciseaux" && player2 === "feuille") {
         uselessStars();
         console.log("                          Félicitations " + namep1 + "! Tu as gagné                      ");
         uselessStars();
          playAgain()
-    } else if (player2 === "rock" && player1 === "scissors" || player2 === "paper" && player1 === "rock" || player2 === "scissors" && player1 === "paper") {
+    } else if (player2 === "pierre" && player1 === "ciseaux" || player2 === "feuille" && player1 === "pierre" || player2 === "ciseaux" && player1 === "feuille") {
         uselessStars()
         console.log("                        Félicitations " + namep2 + "! Tu as gagné                      ");
         uselessStars();
          playAgain()
-    } else if (player1 === "rock" && player2 === "rock" || player1 === "paper" && player2 === "paper" || player1 === "scissors" && player2 === "paper") {
+    } else if (player1 === "pierre" && player2 === "pierre" || player1 === "feuille" && player2 === "feuille" || player1 === "ciseaux" && player2 === "feuille") {
         console.log("égalité");
          playAgain()
     }
@@ -67,26 +67,26 @@ function associateMove(numberp1, numberp2) {
         // case 0:
         //     break
         case 1:
-            player1 = "paper";
+            player1 = "feuille";
             break;
         case 2:
-            player1 = "rock";
+            player1 = "pierre";
             break;
         case 3:
-            player1 = "scissors";
+            player1 = "ciseaux";
             break;
         default:
             console.log("mauvaise touche");
     }
     switch (numberp2) {
         case 1:
-            player2 = "paper";
+            player2 = "feuille";
             break;
         case 2:
-            player2 = "rock";
+            player2 = "pierre";
             break;
         case 3:
-            player2 = "scissors";
+            player2 = "ciseaux";
             break;
         default:
             console.log("mauvaise touche");
