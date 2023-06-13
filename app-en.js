@@ -1,18 +1,3 @@
-console.log("********************************************************************************");
-console.log("********************************************************************************");
-console.log("********************************************************************************");
-console.log("********************************************************************************");
-console.log("********************************************************************************");
-console.log("********************************************************************************");
-console.log("                   WELCOME TO A GAME OF ROCK PAPER SCISSORS                     ");
-console.log("********************************************************************************");
-console.log("********************************************************************************");
-console.log("********************************************************************************");
-console.log("********************************************************************************");
-console.log("********************************************************************************");
-console.log("********************************************************************************");
-
-
 function uselessStars() {
     console.log("********************************************************************************");
     console.log("********************************************************************************");
@@ -22,9 +7,11 @@ function uselessStars() {
     console.log("********************************************************************************");
 }
 
-function uselessTimeStar() {
-    uselessStars(); 
-    console.log("                                 TIME TO PLAY                                  ");
+
+
+function welcomeMSG() {
+    uselessStars();
+    console.log("                   WELCOME TO A GAME OF ROCK PAPER SCISSORS                     ");
     uselessStars();
 }
 
@@ -34,35 +21,30 @@ var numberp1;
 var numberp2;
 var namep1;
 var namep2;
-var name1;
 var namep2;
 var staygo;
-
-function Timeout() {
-    setTimeout(() => {
-        console.log("peace, I'm out");
-    }, "5000")
-
-}
+var scorep1 = 0;
+var scorep2 = 0;
 
 function gameRules(player1, player2) {
     if (player1 === "rock" && player2 === "scissors" || player1 === "paper" && player2 === "rock" || player1 === "scissors" && player2 === "paper") {
-        uselessStars();
         console.log("                          Congrats " + namep1 + "! You win                      ");
-        uselessStars();
-        // Timeout();
+        scorep1 += 1;
         playAgain()
     } else if (player2 === "rock" && player1 === "scissors" || player2 === "paper" && player1 === "rock" || player2 === "scissors" && player1 === "paper") {
-        uselessStars()
         console.log("                        Congrats " + namep2 + "! You win                        ");
-        uselessStars();
-        // Timeout();
+        scorep2 += 1;
         playAgain()
     } else if (player1 === "rock" && player2 === "rock" || player1 === "paper" && player2 === "paper" || player1 === "scissors" && player2 === "paper") {
         console.log("tied");
-        // Timeout();
-        playAgain()
+        playAgain(namep1, namep2);
     }
+}
+
+function scoreBoard() {
+    console.log("Final Scores:");
+    console.log(namep1 + ": " + scorep1);
+    console.log(namep2 + ": " + scorep2);
 }
 
 function associateMove(numberp1, numberp2) {
@@ -80,7 +62,7 @@ function associateMove(numberp1, numberp2) {
             player1 = "scissors";
             break;
         default:
-            console.log("p1 wrong input");
+             console.log(player1+" wrong input");
     }
     switch (numberp2) {
         case 1:
@@ -93,25 +75,24 @@ function associateMove(numberp1, numberp2) {
             player2 = "scissors";
             break;
         default:
-            console.log("p2 wrong input");
+        console.log(player2+" wrong input");
     }
     console.log(player1 + " vs " + player2);
     gameRules(player1, player2)
 }
 
-
 const prompt = require('password-prompt');
 async function lunchingGame() {
-    const numberp1 = await prompt(namep1 + ': press 1 for paper, 2 for rocks, 3 for scissors: ', {
+    numberp1 = await prompt(namep1 + ': press 1 for paper, 2 for rocks, 3 for scissors: ', {
         method: 'hide'
     });
-    const numberp2 = await prompt(' and now for ' + namep2 + ': ', {
+    numberp2 = await prompt(' and now for ' + namep2 + ': ', {
         method: 'hide'
     });
     associateMove(parseInt(numberp1), parseInt(numberp2));
 }
 
-function getNames() {
+function LunchGameNames() {
     const readline = require("readline")
     const rl = readline.createInterface({
         input: process.stdin,
@@ -123,7 +104,11 @@ function getNames() {
             rl.close();
             namep1 = name1;
             namep2 = name2;
-            uselessTimeStar();
+            
+            uselessStars();
+            console.log("                                 TIME TO PLAY                                  ");
+            uselessStars();
+            
             lunchingGame();
         });
     });
@@ -139,11 +124,20 @@ function playAgain() {
 
     rl.question("Shall we play again ? Y - N ", function saveInput(staygo) {
         rl.close();
-        if (staygo === "y") {
-            lunchingGame();
-        } else if (staygo === "n") {
-            console.log("bye")
+        if (staygo.toLowerCase() === "y") {
+            if (scorep1 + scorep2 < 5) { // Continue playing until 5 rounds are completed
+                lunchingGame();
+            } else {
+                scoreBoard();
+                console.log("Game over!");
+            }
+        } else if (staygo.toLowerCase() === "n") {
+            scoreBoard();
+            console.log("Bye!");
         }
     });
 }
-getNames();
+
+
+welcomeMSG();
+LunchGameNames();
