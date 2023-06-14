@@ -91,7 +91,7 @@ function exitForReal() {
         input: process.stdin,
         output: process.stdout,
     });
-    rl.question("Appuis Sur nimporte quelle touche", function saveInput(staygo) {
+    rl.question("Appuis sur ENTRER", function saveInput(staygo) {
         rl.close();
     });
 }

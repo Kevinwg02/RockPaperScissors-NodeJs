@@ -21,7 +21,7 @@ function exitForReal() {
         input: process.stdin,
         output: process.stdout,
     });
-    rl.question("Press any key to leave", function saveInput(staygo) {
+    rl.question("Press ENTER to leave", function saveInput(staygo) {
         rl.close();
     });
 }
