@@ -1,18 +1,3 @@
-function uselessStars() {
-    console.log("********************************************************************************");
-    console.log("********************************************************************************");
-    console.log("********************************************************************************");
-    console.log("********************************************************************************");
-    console.log("********************************************************************************");
-    console.log("********************************************************************************");
-}
-
-function welcomeMSG() {
-    uselessStars();
-    console.log("                  BIENVENUE AU PIERRE, FEUILLE, CISEAUX                    ");
-    uselessStars();
-}
-
 var player1;
 var player2;
 var numberp1;
@@ -23,6 +8,19 @@ var staygo;
 var scorep1 = 0;
 var scorep2 = 0;
 
+function uselessStars() {
+    console.log("********************************************************************************");
+    console.log("********************************************************************************");
+    console.log("********************************************************************************");
+    console.log("********************************************************************************");
+    console.log("********************************************************************************");
+    console.log("********************************************************************************");
+}
+function welcomeMSG() {
+    uselessStars();
+    console.log("                  BIENVENUE AU PIERRE, FEUILLE, CISEAUX                    ");
+    uselessStars();
+}
 function gameRules(player1, player2) {
     if (player1 === "pierre" && player2 === "ciseaux" || player1 === "feuille" && player2 === "pierre" || player1 === "ciseaux" && player2 === "feuille") {
         console.log("                          Felicitation " + namep1 + "! Tu as gagner                      ");
@@ -36,12 +34,6 @@ function gameRules(player1, player2) {
         console.log("Egaliter");
         playAgain(namep1, namep2);
     }
-}
-
-function scoreBoard() {
-    console.log("Scores Final:");
-    console.log(namep1 + ": " + scorep1);
-    console.log(namep2 + ": " + scorep2);
 }
 function associateMove(numberp1, numberp2) {
     switch (numberp1) {
@@ -73,7 +65,6 @@ function associateMove(numberp1, numberp2) {
     console.log(player1 + " vs " + player2);
     gameRules(player1, player2)
 }
-
 const prompt = require('password-prompt');
 async function Game() {
     numberp1 = await prompt(namep1 + ': Appuis 1 pour feuille, 2 pour pierres, 3 pour ciseaux: ', {
@@ -84,7 +75,6 @@ async function Game() {
     });
     associateMove(parseInt(numberp1), parseInt(numberp2));
 }
-
 function exitForReal() {
     const readline = require("readline")
     const rl = readline.createInterface({
@@ -95,7 +85,6 @@ function exitForReal() {
         rl.close();
     });
 }
-
 function LunchGameNames() {
     const readline = require("readline")
     const rl = readline.createInterface({
@@ -117,7 +106,6 @@ function LunchGameNames() {
         });
     });
 }
-
 function playAgain() {
     const readline = require("readline")
     const rl = readline.createInterface({
@@ -135,7 +123,10 @@ function playAgain() {
         }       
     });
 }
-
-
+function scoreBoard() {
+    console.log("Scores Final:");
+    console.log(namep1 + ": " + scorep1);
+    console.log(namep2 + ": " + scorep2);
+}
 welcomeMSG();
 LunchGameNames();
