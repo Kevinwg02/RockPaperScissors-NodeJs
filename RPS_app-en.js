@@ -1,31 +1,3 @@
-function uselessStars() {
-    console.log("********************************************************************************");
-    console.log("********************************************************************************");
-    console.log("********************************************************************************");
-    console.log("********************************************************************************");
-    console.log("********************************************************************************");
-    console.log("********************************************************************************");
-}
-
-
-
-function welcomeMSG() {
-    uselessStars();
-    console.log("                   WELCOME TO A GAME OF ROCK PAPER SCISSORS                     ");
-    uselessStars();
-}
-
-function exitForReal() {
-    const readline = require("readline")
-    const rl = readline.createInterface({
-        input: process.stdin,
-        output: process.stdout,
-    });
-    rl.question("Press ENTER to leave", function saveInput(staygo) {
-        rl.close();
-    });
-}
-
 var player1;
 var player2;
 var numberp1;
@@ -35,7 +7,19 @@ var namep2;
 var staygo;
 var scorep1 = 0;
 var scorep2 = 0;
-
+function uselessStars() {
+    console.log("********************************************************************************");
+    console.log("********************************************************************************");
+    console.log("********************************************************************************");
+    console.log("********************************************************************************");
+    console.log("********************************************************************************");
+    console.log("********************************************************************************");
+}
+function welcomeMSG() {
+    uselessStars();
+    console.log("                   WELCOME TO A GAME OF ROCK PAPER SCISSORS                     ");
+    uselessStars();
+}
 function gameRules(player1, player2) {
     if (player1 === "rock" && player2 === "scissors" || player1 === "paper" && player2 === "rock" || player1 === "scissors" && player2 === "paper") {
         console.log("                          Congrats " + namep1 + "! You win                      ");
@@ -50,8 +34,6 @@ function gameRules(player1, player2) {
         playAgain(namep1, namep2);
     }
 }
-
-
 function associateMove(numberp1, numberp2) {
     switch (numberp1) {
         case 1:
@@ -82,25 +64,17 @@ function associateMove(numberp1, numberp2) {
     console.log(player1 + " vs " + player2);
     gameRules(player1, player2)
 }
-
-const prompt = require('password-prompt');
-async function Game() {
-    numberp1 = await prompt(namep1 + ': press 1 for paper, 2 for rocks, 3 for scissors: ', {
-        method: 'hide'
+function exitForReal() {
+    const readline = require("readline")
+    const rl = readline.createInterface({
+        input: process.stdin,
+        output: process.stdout,
     });
-    numberp2 = await prompt(' and now for ' + namep2 + ': ', {
-        method: 'hide'
+    rl.question("Press ENTER to leave", function saveInput(staygo) {
+        rl.close();
     });
-    associateMove(parseInt(numberp1), parseInt(numberp2));
 }
-
-function scoreBoard() {
-    console.log("Final Scores:");
-    console.log(namep1 + ": " + scorep1);
-    console.log(namep2 + ": " + scorep2);
-}
-
-function GameNames() {
+function LunchGameNames() {
     const readline = require("readline")
     const rl = readline.createInterface({
         input: process.stdin,
@@ -121,9 +95,16 @@ function GameNames() {
         });
     });
 }
-
-
-
+const prompt = require('password-prompt');
+async function Game() {
+    numberp1 = await prompt(namep1 + ': press 1 for paper, 2 for rocks, 3 for scissors: ', {
+        method: 'hide'
+    });
+    numberp2 = await prompt(' and now for ' + namep2 + ': ', {
+        method: 'hide'
+    });
+    associateMove(parseInt(numberp1), parseInt(numberp2));
+}
 function playAgain() {
     const readline = require("readline")
     const rl = readline.createInterface({
@@ -141,7 +122,11 @@ function playAgain() {
         }   
     });
 }
-
+function scoreBoard() {
+    console.log("Final Scores:");
+    console.log(namep1 + ": " + scorep1);
+    console.log(namep2 + ": " + scorep2);
+}
 
 welcomeMSG();
-GameNames();
+LunchGameNames();
