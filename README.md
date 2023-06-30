@@ -18,9 +18,13 @@ Here you will found the game files, screenshots, .exe.
 
 Here is the welcome menu, where you can both type your names, then make you're moves:
 
-![welcomeplayers](https://user-images.githubusercontent.com/71637950/226859117-70e63dd1-09c8-43a2-b1c4-2e2062f48b33.png)
+![1-welcomeplayers](https://github.com/Kevinwg02/RockPaperScissors-NodeJs/assets/71637950/fabcceb4-624b-4a9f-9e67-0319c389cb5b)
+![2-picknames](https://github.com/Kevinwg02/RockPaperScissors-NodeJs/assets/71637950/aee10eeb-17d9-4801-a368-837b4e027137)
 
-And here's the winner
+![3-firstMove](https://github.com/Kevinwg02/RockPaperScissors-NodeJs/assets/71637950/6c434b18-3b8b-4b32-a035-4a1d4cd18160)
+![4-secondmove](https://github.com/Kevinwg02/RockPaperScissors-NodeJs/assets/71637950/7a0f3537-162a-422b-aee4-9d58fca0406e)
 
-![winner](https://user-images.githubusercontent.com/71637950/226552686-190d07e6-daac-4e15-a199-34b21e799fc3.png)
-![again](https://user-images.githubusercontent.com/71637950/226857997-620b4a48-f5a7-4977-8168-102615ccc43f.png)
+And here's the winner:
+![5-Winner](https://github.com/Kevinwg02/RockPaperScissors-NodeJs/assets/71637950/4de8faa2-7cf7-40d3-9a46-7fc0cbf8ec17)
+Now the scoreboard if you decide to stop the game
+![6-scoreboardagain](https://github.com/Kevinwg02/RockPaperScissors-NodeJs/assets/71637950/a1bd08df-5d9d-423f-bc1d-51db73d2a13d)
