@@ -44,8 +44,8 @@ function gameRules(player1, player2) {
   ) {
     console.log(
       "                          Felicitation " +
-        namep1 +
-        "! Tu as gagner                      "
+      namep1 +
+      "! Tu as gagner                      "
     );
     scorep1 += 1;
     playAgain();
@@ -56,8 +56,8 @@ function gameRules(player1, player2) {
   ) {
     console.log(
       "                        Felicitation " +
-        namep2 +
-        "! Tu as gagner                        "
+      namep2 +
+      "! Tu as gagner                        "
     );
     scorep2 += 1;
     playAgain();
@@ -102,8 +102,8 @@ function associateMove(numberp1, numberp2) {
 }
 
 function randomBotmove() {
-  random = Math.floor(Math.random() * 4);
-
+  const crypto = require('crypto');
+  const random = crypto.randomInt(1, 4); // Generate a random number between 0 and 2
   return random;
 }
 
@@ -115,7 +115,6 @@ async function Game() {
       method: "hide",
     }
   );
-
   associateMove(parseInt(numberp1), numberp2);
 }
 function exitForReal() {
@@ -138,7 +137,7 @@ function LunchGameNames() {
   rl.question("Joueur 1, écris ton nom ", function saveInput(name1) {
     rl.close();
     namep1 = name1;
-    numberp2 = random;
+    numberp2 = randomBotmove();
     uselessStars();
     console.log(
       "                                 Bonne Chance                                  "
@@ -157,7 +156,7 @@ function playAgain() {
   rl.question("On joue encore une fois ? o - n ", function saveInput(staygo) {
     rl.close();
     if (staygo.toLowerCase() === "o") {
-      randomBotmove();
+     numberp2 = randomBotmove();
       Game();
     } else if (staygo.toLowerCase() === "n") {
       scoreBoard();
@@ -166,10 +165,9 @@ function playAgain() {
   });
 }
 function scoreBoard() {
-  console.log("Scores Final:");
+  console.log("SCORE FINALE:");
   console.log(namep1 + ": " + scorep1);
   console.log(namep2 + ": " + scorep2);
 }
 welcomeMSG();
-randomBotmove();
 LunchGameNames();
