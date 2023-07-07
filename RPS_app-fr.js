@@ -184,7 +184,7 @@ function lunchBotgame() {
     GameVersusbot();
   });
 }
-function numberofGames() {
+function numberofPlayers() {
 
   const readline = require("readline");
   const rl0 = readline.createInterface({
@@ -214,8 +214,13 @@ function playAgain() {
   rl.question("On joue encore une fois ? o - n ", function saveInput(staygo) {
     rl.close();
     if (staygo.toLowerCase() === "o") {
+      console.log(nbplayers)
+     if (nbplayers === 1) {
       numberp2 = randomBotmove();
-      Game();
+        lunchBotgame();
+      } else if (nbplayers === 2) {
+        lunchTwoplayergame();
+      }
     } else if (staygo.toLowerCase() === "n") {
       scoreBoard();
       exitForReal();
@@ -229,5 +234,5 @@ function scoreBoard() {
 }
 
 welcomeMSG();
-numberofGames();
-// lunchTwoplayergame();
+// numberofPlayers();
+lunchTwoplayergame();

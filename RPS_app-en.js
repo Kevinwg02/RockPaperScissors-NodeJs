@@ -51,12 +51,12 @@ function exitForReal() {
 function gameRules(player1, player2) {
 
   if (
-    (player1 === "rock" && player2 === "scissors") ||
-    (player1 === "paper" && player2 === "rock") ||
-    (player1 === "scissors" && player2 === "paper")
+    (player1 === "pierre" && player2 === "ciseaux") ||
+    (player1 === "feuille" && player2 === "pierre") ||
+    (player1 === "ciseaux" && player2 === "feuille")
   ) {
     console.log(
-      "                          Congrats " +
+      "                          Felicitation " +
       namep1 +
       "! Tu as gagner                      "
     );
@@ -64,21 +64,21 @@ function gameRules(player1, player2) {
     scorep1 += 1;
     playAgain();
   } else if (
-    (player2 === "rock" && player1 === "scissors") ||
-    (player2 === "paper" && player1 === "rock") ||
-    (player2 === "scissors" && player1 === "paper")
+    (player2 === "pierre" && player1 === "ciseaux") ||
+    (player2 === "feuille" && player1 === "pierre") ||
+    (player2 === "ciseaux" && player1 === "feuille")
   ) {
     console.log(
-      "                        Congrats " +
+      "                        Felicitation " +
       namep2 +
       "! Tu as gagner                        "
     );
     scorep2 += 1;
     playAgain();
   } else if (
-    (player1 === "rock" && player2 === "rock") ||
-    (player1 === "paper" && player2 === "paper") ||
-    (player1 === "scissors" && player2 === "paper")
+    (player1 === "pierre" && player2 === "pierre") ||
+    (player1 === "feuille" && player2 === "feuille") ||
+    (player1 === "ciseaux" && player2 === "feuille")
   ) {
     console.log("Egaliter");
     playAgain(namep1, namep2);
@@ -87,29 +87,29 @@ function gameRules(player1, player2) {
 function associateMove(numberp1, numberp2) {
   switch (numberp1) {
     case 1:
-      player1 = "paper";
+      player1 = "feuille";
       break;
     case 2:
-      player1 = "rock";
+      player1 = "pierre";
       break;
     case 3:
-      player1 = "scissors";
+      player1 = "ciseaux";
       break;
     default:
-      console.log(player1 + " wrong input");
+      console.log(player1 + " fautes de frappes");
   }
   switch (numberp2) {
     case 1:
-      player2 = "paper";
+      player2 = "feuille";
       break;
     case 2:
-      player2 = "rock";
+      player2 = "pierre";
       break;
     case 3:
-      player2 = "scissors";
+      player2 = "ciseaux";
       break;
     default:
-      console.log(player2 + " wrong input");
+      console.log(player2 + " fautes de frappes");
   }
   console.log(player1 + " vs " + player2);
   gameRules(player1, player2);
@@ -123,12 +123,12 @@ const Gameprompt = require("password-prompt");
 async function Game() {
   //using a password prompt to hide the imput 
   numberp1 = await Gameprompt(
-    namep1 + ": press 1 for paper, 2 for rocks, 3 for scissors: ",
+    namep1 + ": Appuis 1 pour feuille, 2 pour pierres, 3 pour ciseaux: ",
     {
       method: "hide",
     }
   );
-  numberp2 = await Gameprompt(' and now ' + namep2 + ': ', {
+  numberp2 = await Gameprompt(' et maintenant pour ' + namep2 + ': ', {
     method: 'hide'
   });
 
@@ -137,7 +137,7 @@ async function Game() {
 const Botgameprompt = require("password-prompt");
 async function GameVersusbot() {
   numberp1 = await Botgameprompt(
-    namep1 + ": press 1 for paper, 2 for rocks, 3 for scissors: ",
+    namep1 + ": Appuis 1 pour feuille, 2 pour pierres, 3 pour ciseaux: ",
     {
       method: "hide",
     }
@@ -152,14 +152,14 @@ function lunchTwoplayergame() {
     output: process.stdout,
   });
 
-  rl.question("player 1: write your name ", function saveInput(name1) {
-    rl.question("and now for player 2: ", function saveInput(name2) {
+  rl.question("Joueur 1, écris ton nom ", function saveInput(name1) {
+    rl.question("et maintenant joueur 2: ", function saveInput(name2) {
       rl.close();
       namep1 = name1;
       namep2 = name2;
 
       uselessStars();
-      console.log("                                 Good luck                                  ");
+      console.log("                                 Bonne Chance                                  ");
       uselessStars();
       Game();
     });
@@ -172,13 +172,13 @@ function lunchBotgame() {
     output: process.stdout,
   });
 
-  rl.question("player 1: write your name ", function saveInput(name1) {
+  rl.question("Joueur 1, écris ton nom ", function saveInput(name1) {
     rl.close();
     namep1 = name1;
     numberp2 = randomBotmove();
     uselessStars();
     console.log(
-      "                                 GOOD LUCK                                 "
+      "                                 Bonne Chance                                  "
     );
     uselessStars();
     GameVersusbot();
@@ -191,7 +191,7 @@ function numberofGames() {
     input: process.stdin,
     output: process.stdout,
   });
-  rl0.question("Would you like to play alone or with someone: PRESS 1 or 2", function saveInput(nbplayers) {
+  rl0.question("Vous jouez a seul ou a deux ?  Appuis sur 1 ou 2 ", function saveInput(nbplayers) {
     nbplayers = parseInt(nbplayers);
     rl0.close();
 
@@ -211,7 +211,7 @@ function playAgain() {
     output: process.stdout,
   });
 
-  rl.question("Shall we play again ? Y - N ", function saveInput(staygo) {
+  rl.question("On joue encore une fois ? o - n ", function saveInput(staygo) {
     rl.close();
     if (staygo.toLowerCase() === "o") {
       numberp2 = randomBotmove();
@@ -223,11 +223,11 @@ function playAgain() {
   });
 }
 function scoreBoard() {
-  console.log("FINALE SCORE:");
+  console.log("SCORE FINALE:");
   console.log(namep1 + ": " + scorep1);
   console.log(namep2 + ": " + scorep2);
 }
 
 welcomeMSG();
-numberofGames();
-// lunchTwoplayergame();
+// numberofGames();
+lunchTwoplayergame();
