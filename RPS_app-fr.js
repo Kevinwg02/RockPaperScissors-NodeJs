@@ -145,6 +145,7 @@ async function GameVersusbot() {
 
   associateMove(parseInt(numberp1), numberp2);
 }
+
 function lunchTwoplayergame() {
   const readline = require("readline")
   const rl = readline.createInterface({
@@ -165,44 +166,6 @@ function lunchTwoplayergame() {
     });
   });
 }
-function lunchBotgame() {
-  const readline = require("readline");
-  const rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout,
-  });
-
-  rl.question("Joueur 1, écris ton nom ", function saveInput(name1) {
-    rl.close();
-    namep1 = name1;
-    numberp2 = randomBotmove();
-    uselessStars();
-    console.log(
-      "                                 Bonne Chance                                  "
-    );
-    uselessStars();
-    GameVersusbot();
-  });
-}
-function numberofPlayers() {
-
-  const readline = require("readline");
-  const rl0 = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout,
-  });
-  rl0.question("Vous jouez a seul ou a deux ?  Appuis sur 1 ou 2 ", function saveInput(nbplayers) {
-    nbplayers = parseInt(nbplayers);
-    rl0.close();
-
-    //decide if we play alone or against a someone
-    if (nbplayers === 1) {
-      lunchBotgame();
-    } else if (nbplayers === 2) {
-      lunchTwoplayergame();
-    }
-  });
-}
 
 function playAgain() {
   const readline = require("readline");
@@ -214,14 +177,9 @@ function playAgain() {
   rl.question("On joue encore une fois ? o - n ", function saveInput(staygo) {
     rl.close();
     if (staygo.toLowerCase() === "o") {
-      console.log(nbplayers)
-     if (nbplayers === 1) {
-      numberp2 = randomBotmove();
-        lunchBotgame();
-      } else if (nbplayers === 2) {
-        lunchTwoplayergame();
-      }
-    } else if (staygo.toLowerCase() === "n") {
+      lunchTwoplayergame();  
+   }
+    if(staygo.toLowerCase() === "n") {
       scoreBoard();
       exitForReal();
     }
