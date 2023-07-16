@@ -107,7 +107,11 @@ async function Game() {
   numberp2 = await Gameprompt(' and now for ' + namep2 + ': ', {
     method: 'hide'
   });
-
+  if (parseInt(numberp1) !== 1 && parseInt(numberp1) !== 2 && parseInt(numberp1) !== 3) {
+    console.log("wrong number for " + namep1);
+    Game(); // Restart the game if the input is invalid
+    return; // Add a return statement to prevent further execution
+  }
   associateMove(parseInt(numberp1), parseInt(numberp2));
 }
 

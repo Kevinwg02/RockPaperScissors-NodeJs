@@ -11,23 +11,17 @@ var random;
 
 //useless text for presentation
 function uselessStars() {
-  console.log(
-    "********************************************************************************"
+  console.log("********************************************************************************"
   );
-  console.log(
-    "********************************************************************************"
+  console.log("********************************************************************************"
   );
-  console.log(
-    "********************************************************************************"
+  console.log("********************************************************************************"
   );
-  console.log(
-    "********************************************************************************"
+  console.log("********************************************************************************"
   );
-  console.log(
-    "********************************************************************************"
+  console.log("********************************************************************************"
   );
-  console.log(
-    "********************************************************************************"
+  console.log("********************************************************************************"
   );
 }
 function welcomeMSG() {
@@ -55,10 +49,7 @@ function gameRules(player1, player2) {
     (player1 === "feuille" && player2 === "pierre") ||
     (player1 === "ciseaux" && player2 === "feuille")
   ) {
-    console.log(
-      "                          Felicitation " +
-      namep1 +
-      "! Tu as gagner                      "
+    console.log("                          Felicitation " + namep1 + "! Tu as gagner "
     );
     //up the score by one for the scoreboard
     scorep1 += 1;
@@ -68,10 +59,7 @@ function gameRules(player1, player2) {
     (player2 === "feuille" && player1 === "pierre") ||
     (player2 === "ciseaux" && player1 === "feuille")
   ) {
-    console.log(
-      "                        Felicitation " +
-      namep2 +
-      "! Tu as gagner                        "
+    console.log("                        Felicitation " + namep2 + "! Tu as gagner                        "
     );
     scorep2 += 1;
     playAgain();
@@ -97,6 +85,7 @@ function associateMove(numberp1, numberp2) {
       break;
     default:
       console.log(player1 + " fautes de frappes");
+      return;
   }
   switch (numberp2) {
     case 1:
@@ -110,6 +99,7 @@ function associateMove(numberp1, numberp2) {
       break;
     default:
       console.log(player2 + " fautes de frappes");
+      return;
   }
   console.log(player1 + " vs " + player2);
   gameRules(player1, player2);
@@ -127,7 +117,11 @@ async function Game() {
   numberp2 = await Gameprompt(' et maintenant pour ' + namep2 + ': ', {
     method: 'hide'
   });
-
+  if (parseInt(numberp1) !== 1 && parseInt(numberp1) !== 2 && parseInt(numberp1) !== 3) {
+    console.log("Numéro invalide pour " + namep1);
+    Game(); // Restart the game if the input is invalid
+    return; // Add a return statement to prevent further execution
+  }
   associateMove(parseInt(numberp1), parseInt(numberp2));
 }
 
@@ -162,9 +156,9 @@ function playAgain() {
   rl.question("On joue encore une fois ? o - n :", function saveInput(staygo) {
     rl.close();
     if (staygo.toLowerCase() === "o") {
-      lunchTwoplayergame();  
-   }
-    if(staygo.toLowerCase() === "n") {
+      Game();
+    }
+    if (staygo.toLowerCase() === "n") {
       scoreBoard();
       exitForReal();
     }
@@ -177,5 +171,4 @@ function scoreBoard() {
 }
 
 welcomeMSG();
-// numberofPlayers();
 lunchTwoplayergame();
