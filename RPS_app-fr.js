@@ -114,11 +114,7 @@ function associateMove(numberp1, numberp2) {
   console.log(player1 + " vs " + player2);
   gameRules(player1, player2);
 }
-function randomBotmove() {
-  const crypto = require('crypto');
-  const random = crypto.randomInt(1, 4); // Generate a random number between 0 and 2
-  return random;
-}
+
 const Gameprompt = require("password-prompt");
 async function Game() {
   //using a password prompt to hide the imput 
@@ -133,17 +129,6 @@ async function Game() {
   });
 
   associateMove(parseInt(numberp1), parseInt(numberp2));
-}
-const Botgameprompt = require("password-prompt");
-async function GameVersusbot() {
-  numberp1 = await Botgameprompt(
-    namep1 + ": Appuis 1 pour feuille, 2 pour pierres, 3 pour ciseaux: ",
-    {
-      method: "hide",
-    }
-  );
-
-  associateMove(parseInt(numberp1), numberp2);
 }
 
 function lunchTwoplayergame() {
@@ -174,7 +159,7 @@ function playAgain() {
     output: process.stdout,
   });
 
-  rl.question("On joue encore une fois ? o - n ", function saveInput(staygo) {
+  rl.question("On joue encore une fois ? o - n :", function saveInput(staygo) {
     rl.close();
     if (staygo.toLowerCase() === "o") {
       lunchTwoplayergame();  
