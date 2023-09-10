@@ -207,7 +207,6 @@ function lunchTwoplayergame() {
       namep2 = name2;
 
       uselessStars();
-      console.log("                  "+ namep1 +" "+" "+ namep2 +"                   ");
       console.log("                                 Bonne Chance                                  ");
       uselessStars();
       Game();
