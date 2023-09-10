@@ -40,7 +40,7 @@ function numberofPlayers() {
     output: process.stdout,
   });
   rl0.question(
-    "Vous jouez a seul ou a deux ?  Appuis sur 1 ou 2 ",
+    " Appuis sur 1 ou 2. Vous jouez a seul ou a deux ?  ",
     function saveInput(nbplayers) {
       nbplayers = parseInt(nbplayers);
       rl0.close();
@@ -117,7 +117,7 @@ function gameRulesTwoPlayers(player1, player2) {
     (player1 === "feuille" && player2 === "pierre") ||
     (player1 === "ciseaux" && player2 === "feuille")
   ) {
-    console.log("  Felicitation " + namep1 + "! Tu as gagner   ");
+    console.log("                        Felicitation " + namep1 + "! Tu as gagner   ");
     scorep1 += 1;
     playAgain();
   } else if (
@@ -207,6 +207,7 @@ function lunchTwoplayergame() {
       namep2 = name2;
 
       uselessStars();
+      console.log("                  "+ namep1 +" "+" "+ namep2 +"                   ");
       console.log("                                 Bonne Chance                                  ");
       uselessStars();
       Game();

@@ -117,7 +117,7 @@ function gameRulesTwoPlayers(player1, player2) {
     (player1 === "paper" && player2 === "rock") ||
     (player1 === "scissors" && player2 === "paper")
   ) {
-    console.log("  Congrats " + namep1 + "! You've won   ");
+    console.log("                          Congrats " + namep1 + "! You've won   ");
     scorep1 += 1;
     playAgain();
   } else if (
