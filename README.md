@@ -8,11 +8,11 @@ You shouldn't need to install it since it's in the folder. Simply download the z
 Here you will found the game files, screenshots, .exe.
 
 <h2>Games functions:</h2>
--Write your names
--hides the moves from the players to prevent cheating and give the users a more typo proof interface
--Relunch of the game at the end.
--A scoreboard was added giving you the number of victory from each players.
--a bot giving you the option to play alone.(different file)
+-Write your names <br>
+-hides the moves from the players to prevent cheating and give the users a more typo proof interface <br>
+-Relunch of the game at the end. <br>
+-A scoreboard was added giving you the number of victory from each players. <br>
+-a bot giving you the option to play alone.(different file) <br>
 
 <h3>Complete version: </h3>
 
