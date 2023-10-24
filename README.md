@@ -1,4 +1,4 @@
-# RPS-NodeJs
+RPS-NodeJs Version 06.23
 <h1>Welcome to Rock Paper Scissors</h1>
 
 Meet a very simple 2 players <i>rock paper scissors</i> game in nodejs. To make this work you shouldn't need anything if you're using the released version if you want to play with the code you will need Nodejs installed but also the password-prompt module.
