@@ -24,7 +24,7 @@ Here is the welcome menu, where you can both type your names, then make you're m
 ![3-firstMove](https://github.com/Kevinwg02/RockPaperScissors-NodeJs/assets/71637950/6c434b18-3b8b-4b32-a035-4a1d4cd18160)
 ![4-secondmove](https://github.com/Kevinwg02/RockPaperScissors-NodeJs/assets/71637950/7a0f3537-162a-422b-aee4-9d58fca0406e)
 
-And here's the winner:
-![5-Winner](https://github.com/Kevinwg02/RockPaperScissors-NodeJs/assets/71637950/4de8faa2-7cf7-40d3-9a46-7fc0cbf8ec17)
-Now the scoreboard if you decide to stop the game
+And here's the winner: <br>
+![5-Winner](https://github.com/Kevinwg02/RockPaperScissors-NodeJs/assets/71637950/4de8faa2-7cf7-40d3-9a46-7fc0cbf8ec17) <br>
+And finally the scoreboard if you decide to stop the game
 ![6-scoreboardagain](https://github.com/Kevinwg02/RockPaperScissors-NodeJs/assets/71637950/a1bd08df-5d9d-423f-bc1d-51db73d2a13d)
