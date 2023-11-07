@@ -135,7 +135,7 @@ function gameRulesTwoPlayers(player1, player2) {
   } else if (
     (player1 === "pierre" && player2 === "pierre") ||
     (player1 === "feuille" && player2 === "feuille") ||
-    (player1 === "ciseaux" && player2 === "feuille")
+    (player1 === "ciseaux" && player2 === "ciseaux")
   ) {
     console.log("Egaliter");
     playAgain();
@@ -227,7 +227,7 @@ function gameRulesOnePlayer(player1, player2) {
   } else if (
     (player2 === "pierre" && player1 === "ciseaux") ||
     (player2 === "feuille" && player1 === "pierre") ||
-    (player2 === "ciseaux" && player1 === "feuille")
+    (player2 === "ciseaux" && player1 === "ciseaux")
   ) {
     console.log(
       "                        Felicitation " +

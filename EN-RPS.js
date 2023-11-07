@@ -40,7 +40,7 @@ function numberofPlayers() {
     output: process.stdout,
   });
   rl0.question(
-    "Are you playing alone or with a friend ? ",
+    "Are you playing alone (1) or with a friend (2)?",
     function saveInput(nbplayers) {
       nbplayers = parseInt(nbplayers);
       rl0.close();
@@ -135,7 +135,7 @@ function gameRulesTwoPlayers(player1, player2) {
   } else if (
     (player1 === "rock" && player2 === "rock") ||
     (player1 === "paper" && player2 === "paper") ||
-    (player1 === "scissors" && player2 === "paper")
+    (player1 === "scissors" && player2 === "scissors")
   ) {
     console.log("Tie");
     playAgain();
@@ -235,7 +235,7 @@ function gameRulesOnePlayer(player1, player2) {
   } else if (
     (player1 === "rock" && player2 === "rock") ||
     (player1 === "paper" && player2 === "paper") ||
-    (player1 === "scissors" && player2 === "paper")
+    (player1 === "scissors" && player2 === "scissors")
   ) {
     console.log("Tie");
     playAgainwithBot();
