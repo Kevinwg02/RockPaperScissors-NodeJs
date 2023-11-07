@@ -40,7 +40,7 @@ function numberofPlayers() {
     output: process.stdout,
   });
   rl0.question(
-    " Appuis sur 1 ou 2. Vous jouez a seul ou a deux ?  ",
+    "Vous jouez a seul (1) ou a deux (2?  ",
     function saveInput(nbplayers) {
       nbplayers = parseInt(nbplayers);
       rl0.close();
@@ -172,11 +172,7 @@ function associateMoveTwoPlayers(numberp1, numberp2) {
       return;
   }
   console.log(player1 + " vs " + player2);
-  // if (nbplayers === 2) {
-  //   gameRulesTwoPlayers(player1, player2);
-  // }else {
-  //   gameRulesOnePlayer(player1, player2);
-  // }
+
   gameRulesTwoPlayers(player1, player2);
 }
 
@@ -239,7 +235,7 @@ function gameRulesOnePlayer(player1, player2) {
   } else if (
     (player1 === "pierre" && player2 === "pierre") ||
     (player1 === "feuille" && player2 === "feuille") ||
-    (player1 === "ciseaux" && player2 === "feuille")
+    (player1 === "ciseaux" && player2 === "ciseaux")
   ) {
     console.log("Egaliter");
     playAgainwithBot();
