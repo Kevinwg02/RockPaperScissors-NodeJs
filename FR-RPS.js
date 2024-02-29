@@ -55,18 +55,37 @@ function numberofPlayers() {
     }
   );
 }
+// function scoreBoard() {
+//   console.log("SCORE FINALE:");
+//   console.log(namep1 + ": " + scorep1);
+//   console.log(namep2 + ": " + scorep2);
+
+//   if (scorep1 > scorep2) {
+//     console.log("Le gagnant est " + namep1);
+//   } else {
+//     console.log("Le gagnant est " + namep2);
+//   }
+// }
+
 function scoreBoard() {
-  console.log("SCORE FINALE:");
-  console.log(namep1 + ": " + scorep1);
-  console.log(namep2 + ": " + scorep2);
+  console.log("**************               SCORE FINALE :        ************************");
+  console.log("***************************************************************************");
+  console.log("***************************************************************************");
+  console.log("**************" +"      " + namep1  +"      " +"************" + "      " + scorep1 + "      " + "*******************");
+  console.log("***************************************************************************");
+  console.log("***************************************************************************");
+  console.log("**************" +"      " + namep2  +"      " +"************"+ "      " + scorep2 + "      " + "*******************");
+  console.log("***************************************************************************");
+  console.log("***************************************************************************");
 
   if (scorep1 > scorep2) {
-    console.log("Le gagnant est " + namep1);
+    console.log("*******************"+"      " +"Le gagnant est   " + namep1+"      " +"************************");
   } else {
-    console.log("Le gagnant est " + namep2);
+    console.log("*******************"+"      " +"Le gagnant est   "+ namep2+"      " +"************************");
   }
-
 }
+
+
 function randomBotmove() {
   const crypto = require('crypto');
   const random = crypto.randomInt(1, 4); // Generate a random number between 0 and 2

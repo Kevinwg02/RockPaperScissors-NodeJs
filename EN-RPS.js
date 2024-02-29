@@ -10,6 +10,9 @@ var scorep2 = 0;
 var random;
 var nbplayers;
 
+// var includerpsmsg = require('./js/rpstitre.js');
+// var scoreboardincluded = require('./js/nicescoreboard.js');
+
 function uselessStars() {
   console.log("********************************************************************************");
   console.log("********************************************************************************");
@@ -18,9 +21,12 @@ function uselessStars() {
   console.log("********************************************************************************");
   console.log("********************************************************************************");
 }
+
 function welcomeMSG() {
   uselessStars();
+  // includerpsmsg.starsstars();
   console.log("                  Welcome to rock, paper, scissors                    ");
+  // includerpsmsg.starsstars();
   uselessStars();
 }
 function exitForReal() {
@@ -55,18 +61,36 @@ function numberofPlayers() {
     }
   );
 }
+// function scoreBoard() {
+//   console.log("FINALE SCORE:");
+//   console.log(namep1 + ": " + scorep1);
+//   console.log(namep2 + ": " + scorep2);
+
+//   if (scorep1 > scorep2) {
+//     console.log("The winner is  " + namep1);
+//   } else {
+//     console.log("The winner is  " + namep2);
+//   }
+// }
+
 function scoreBoard() {
-  console.log("FINALE SCORE:");
-  console.log(namep1 + ": " + scorep1);
-  console.log(namep2 + ": " + scorep2);
+  console.log("**************                FINALE SCORE:        ************************");
+  console.log("***************************************************************************");
+  console.log("***************************************************************************");
+  console.log("**************" +"      " + namep1  +"      " +"************" + "      " + scorep1 + "      " + "*******************");
+  console.log("***************************************************************************");
+  console.log("***************************************************************************");
+  console.log("**************" +"      " + namep2  +"      " +"************"+ "      " + scorep2 + "      " + "*******************");
+  console.log("***************************************************************************");
+  console.log("***************************************************************************");
 
   if (scorep1 > scorep2) {
-    console.log("The winner is  " + namep1);
+    console.log("*******************"+"      " +"The winner is  " + namep1+"      " +"************************");
   } else {
-    console.log("The winner is  " + namep2);
+    console.log("*******************"+"      " +"The winner is  " + namep2+"      " +"************************");
   }
-
 }
+
 function randomBotmove() {
   const crypto = require('crypto');
   const random = crypto.randomInt(1, 4); // Generate a random number between 0 and 2
@@ -85,6 +109,7 @@ function playAgain() {
       Game();
     } else if (staygo.toLowerCase() === "n") {
       scoreBoard();
+      // scoreboardincluded.scoreboardincluded();
       exitForReal();
     }
   });
@@ -304,6 +329,7 @@ function lunchBotgame() {
 }
 
 
+// includerpsmsg.rpsmsg();
 
 welcomeMSG();
 numberofPlayers();
