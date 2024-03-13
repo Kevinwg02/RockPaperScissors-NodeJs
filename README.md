@@ -16,22 +16,3 @@ Here you will found the game files, screenshots, .exe.
 
 <h3>Screenshots: </h3>
 
-
-<img src="assets/RPS-img/maincolor.png" alt="main-img-rps" />
-<img src="assets/RPS-img/scoreboard.png" alt="scoreboard-img-rps" />
-
-
-
-
-
-
-<!-- ![1-welcomeplayers](https://github.com/Kevinwg02/RockPaperScissors-NodeJs/assets/71637950/fabcceb4-624b-4a9f-9e67-0319c389cb5b)
-![2-picknames](https://github.com/Kevinwg02/RockPaperScissors-NodeJs/assets/71637950/aee10eeb-17d9-4801-a368-837b4e027137)
-
-<!-- ![3-firstMove](https://github.com/Kevinwg02/RockPaperScissors-NodeJs/assets/71637950/6c434b18-3b8b-4b32-a035-4a1d4cd18160)
-![4-secondmove](https://github.com/Kevinwg02/RockPaperScissors-NodeJs/assets/71637950/7a0f3537-162a-422b-aee4-9d58fca0406e) -->
-
-<!-- And here's the winner: <br>
-![5-Winner](https://github.com/Kevinwg02/RockPaperScissors-NodeJs/assets/71637950/4de8faa2-7cf7-40d3-9a46-7fc0cbf8ec17) <br>
-And finally the scoreboard if you decide to stop the game
-![6-scoreboardagain](https://github.com/Kevinwg02/RockPaperScissors-NodeJs/assets/71637950/a1bd08df-5d9d-423f-bc1d-51db73d2a13d) --> 
