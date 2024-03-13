@@ -1,3 +1,21 @@
+import chalk from 'chalk';
+import Botgameprompt from "password-prompt";
+import Gameprompt from "password-prompt";
+import readline from "readline";
+import crypto from "crypto";
+
+// the require got remplaced by the import
+
+// const crypto = require('crypto');
+// const readline = require("readline");
+// const Gameprompt = require("password-prompt");
+// const Botgameprompt = require("password-prompt");
+
+const log = console.log;
+chalk.level = 1;
+
+
+
 var player1;
 var player2;
 var numberp1;
@@ -13,24 +31,22 @@ var nbplayers;
 // var includerpsmsg = require('./js/rpstitre.js');
 // var scoreboardincluded = require('./js/nicescoreboard.js');
 
+
 function uselessStars() {
-  console.log("********************************************************************************");
-  console.log("********************************************************************************");
-  console.log("********************************************************************************");
-  console.log("********************************************************************************");
-  console.log("********************************************************************************");
-  console.log("********************************************************************************");
+  log(chalk.cyan("********************************************************************************"));
+  log(chalk.cyan("********************************************************************************"));
+  log(chalk.cyan("********************************************************************************"));
+  log(chalk.cyan("********************************************************************************"));
+  log(chalk.cyan("********************************************************************************"));
 }
 
 function welcomeMSG() {
   uselessStars();
-  // includerpsmsg.starsstars();
-  console.log("                  Welcome to rock, paper, scissors                    ");
-  // includerpsmsg.starsstars();
+  log(chalk.cyanBright("                       Welcome to rock, paper, scissors                    "));
   uselessStars();
 }
 function exitForReal() {
-  const readline = require("readline");
+  // const readline = require("readline");
   const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout,
@@ -40,7 +56,7 @@ function exitForReal() {
   });
 }
 function numberofPlayers() {
-  const readline = require("readline");
+
   const rl0 = readline.createInterface({
     input: process.stdin,
     output: process.stdout,
@@ -61,43 +77,33 @@ function numberofPlayers() {
     }
   );
 }
-// function scoreBoard() {
-//   console.log("FINALE SCORE:");
-//   console.log(namep1 + ": " + scorep1);
-//   console.log(namep2 + ": " + scorep2);
 
-//   if (scorep1 > scorep2) {
-//     console.log("The winner is  " + namep1);
-//   } else {
-//     console.log("The winner is  " + namep2);
-//   }
-// }
 
 function scoreBoard() {
-  console.log("**************                FINALE SCORE:        ************************");
-  console.log("***************************************************************************");
-  console.log("***************************************************************************");
-  console.log("**************" +"      " + namep1  +"      " +"************" + "      " + scorep1 + "      " + "*******************");
-  console.log("***************************************************************************");
-  console.log("***************************************************************************");
-  console.log("**************" +"      " + namep2  +"      " +"************"+ "      " + scorep2 + "      " + "*******************");
-  console.log("***************************************************************************");
-  console.log("***************************************************************************");
+  log(chalk.cyanBright("**************                FINALE SCORE:        ************************"));
+  log(chalk.cyan("***************************************************************************"));
+  log(chalk.cyan("***************************************************************************"));
+  log(chalk.cyanBright("**************" + "      " + namep1 + "      " + "            " + "      " + scorep1 + "      " + "*******************"));
+  log(chalk.cyan("***************************************************************************"));
+  log(chalk.cyan("***************************************************************************"));
+  log(chalk.cyanBright("**************" + "      " + namep2 + "      " + "            " + "      " + scorep2 + "      " + "*******************"));
+  log(chalk.cyan("***************************************************************************"));
+  log(chalk.cyan("****************************************************************************"));
 
   if (scorep1 > scorep2) {
-    console.log("*******************"+"      " +"The winner is  " + namep1+"      " +"************************");
+    log(chalk.cyanBright("*******************" + "      " + "The winner is  " + namep1 + "      " + "************************"));
   } else {
-    console.log("*******************"+"      " +"The winner is  " + namep2+"      " +"************************");
+    log(chalk.cyanBright("*******************" + "      " + "The winner is  " + namep2 + "      " + "************************"));
   }
 }
 
 function randomBotmove() {
-  const crypto = require('crypto');
+
   const random = crypto.randomInt(1, 4); // Generate a random number between 0 and 2
   return random;
 }
 function playAgain() {
-  const readline = require("readline");
+  // const readline = require("readline");
   const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout,
@@ -116,7 +122,7 @@ function playAgain() {
 }
 
 function playAgainwithBot() {
-  const readline = require("readline");
+  // const readline = require("readline");
   const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout,
@@ -201,7 +207,6 @@ function associateMoveTwoPlayers(numberp1, numberp2) {
   gameRulesTwoPlayers(player1, player2);
 }
 
-const Gameprompt = require("password-prompt");
 async function Game() {
   numberp1 = await Gameprompt(
     namep1 + ": Press 1 for paper, 2 for rocks, 3 for scissors: ",
@@ -215,7 +220,7 @@ async function Game() {
   associateMoveTwoPlayers(parseInt(numberp1), parseInt(numberp2));
 }
 function lunchTwoplayergame() {
-  const readline = require("readline")
+  // const readline = require("readline")
   const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout,
@@ -228,7 +233,7 @@ function lunchTwoplayergame() {
       namep2 = name2;
 
       uselessStars();
-      console.log("                                 Good Luck                                  ");
+      log(chalk.cyan("                                Good Luck                                  "));
       uselessStars();
       Game();
     });
@@ -298,7 +303,7 @@ function associateMoveOnePlayers(numberp1, numberp2) {
   console.log(player1 + " vs " + player2);
   gameRulesOnePlayer(player1, player2);
 }
-const Botgameprompt = require("password-prompt");
+
 async function GameVersusbot() {
   numberp1 = await Botgameprompt(
     namep1 + ": Press 1 for paper, 2 for rocks, 3 for scissors: ",
@@ -310,7 +315,7 @@ async function GameVersusbot() {
 }
 
 function lunchBotgame() {
-  const readline = require("readline");
+  // const readline = require("readline");
   const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout,
@@ -321,8 +326,7 @@ function lunchBotgame() {
     namep1 = name1;
     numberp2 = randomBotmove();
     uselessStars();
-    console.log("                                 Good Luck                                  "
-    );
+    log(chalk.cyan("                                Good Luck                                  "));
     uselessStars();
     GameVersusbot();
   });
