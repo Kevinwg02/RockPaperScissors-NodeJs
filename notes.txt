@@ -1,5 +1,0 @@
-npm install -g pkg
-
-
-pkg FR-RPS.js --targets node16-win-x64
-pkg EN-RPS.js --targets node16-win-x64
