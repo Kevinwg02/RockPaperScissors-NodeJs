@@ -16,3 +16,6 @@ Here you will found the game files, screenshots, .exe.
 
 <h3>Screenshots: </h3>
 
+
+<img src="others/RPS-img/maincolor.png" alt="main-img-rps" />
+<img src="others/RPS-img/scoreboard.png" alt="scoreboard-img-rps" />
